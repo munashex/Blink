@@ -12,7 +12,7 @@ const Navbar = () => {
 const {theme, toggleTheme} = useContext(ThemeContext) 
 
     return (
-        <div className="px-4 md:px-10 lg:px-24 py-3 border-b"> 
+        <div className={`px-4 md:px-10 lg:px-24 py-3 lg:py-4 border-b ${theme === 'dark' ? 'border-b-gray-700' : 'border-gray-300'}`}> 
 
         <div className="flex flex-row justify-between">
         <button><PiCircleHalfLight size={45}/></button>  
