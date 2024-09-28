@@ -8,7 +8,7 @@ const App = () => {
   const {theme} = useContext(ThemeContext) 
 
   return (
-        <div className={theme === 'dark' ? 'bg-[#191A1A]  min-h-screen text-white' : 'text-black'}>
+        <div className={theme === 'dark' ? 'bg-[#171616]  min-h-screen text-white' : 'text-black'}>
         <Router>
         <Navbar/>
         <div className="px-4 md:px-10 lg:px-24 ">

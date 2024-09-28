@@ -9,11 +9,21 @@ import video6 from '../images/home6.mp4'
 import VideoPlayer from "../components/VideoPlayer"
 import { MdOutlineSubdirectoryArrowRight } from "react-icons/md"
 import { services } from "../data/services"
-
+import { FaPlus, FaMinus} from "react-icons/fa6";
+import { works } from "../data/works"
+import { IoMdArrowForward } from "react-icons/io";
 
 function Home() {
   const { theme } = useContext(ThemeContext)
- 
+  const [openAccordion, setOpenAccordion] = useState(null)
+
+  const toggleAccordion = (index) => {
+    if (openAccordion === index) {
+      setOpenAccordion(null)
+    } else {
+      setOpenAccordion(index)
+    }
+  }
 
   return (
     <div className='mt-11'>
@@ -55,11 +65,69 @@ function Home() {
         </h1>
         
         {/* services accordion */}
-        <div>
-          
+        <div className={`mt-7 space-y-2 ${theme === 'dark' ? "divide-y divide-gray-700" : "divide-y divide-y-300"}`}>
+          {services.map((service, index) => (
+            <div key={service.name} onClick={() => toggleAccordion(index)} className="cursor-pointer"> 
+              <div className="flex flex-row justify-between py-3"> 
+                <div className="inline-flex items-center gap-x-2.5"> 
+                  <span className="hover:rotate-180 cursor-pointer">{service.icon}</span>
+                  <h1 className="text-xl font-semibold">{service.name}</h1>
+                </div> 
+                <button onClick={() => toggleAccordion(index)}>
+                  {openAccordion === index ? <FaMinus size={25}/> : <FaPlus size={25}/>}
+                </button>
+              </div>
+              {openAccordion === index && <h1 className="lg:text-lg animate-fade-down mb-4">{service.description}</h1>}
+            </div>
+          ))}
         </div>
-
       </div>
+
+      {/* works */} 
+      <div className="mt-11 lg:mt-20"> 
+      <h1 className="inline-flex items-center gap-x-3 mb-6">
+          <MdOutlineSubdirectoryArrowRight size={25}/>
+          <span className="text-xl">WORKS</span>
+        </h1>
+
+        <div className="mt-7 grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-7">
+         {works.map((work) => (
+          <div key={work.name} className={theme === 'dark' ? 'p-3 bg-[#202021] rounded-xl lg:p-5' : 'p-3 lg:p-5 bg-gray-100 rounded-xl'}> 
+            <img src={work.image} alt={work.name} className="scale-100 lg:hover:scale-125 transition delay-150 duration-300 ease-in-out"/> 
+            <div className="space-y-2.5"> 
+              <h1 className="text-xl md:text-2xl font-bold">{work.name}</h1> 
+              <div className="inline-flex items-center gap-x-2"> 
+                <button className={`font-semibold text-sm ${theme === 'light' ? 'border border-black py-1 rounded-full px-2 hover:text-white hover:bg-black' : 'border border-white py-1 rounded-full px-2 hover:text-black hover:bg-white'}`}>UI.UX</button> 
+                <button className={`font-semibold text-sm ${theme === 'light' ? 'border border-black py-1 rounded-full px-2 hover:text-white hover:bg-black' : 'border border-white py-1 rounded-full px-2 hover:text-black hover:bg-white'}`}>Branding</button> 
+                <button className={`font-semibold text-sm ${theme === 'light' ? 'border border-black py-1 rounded-full px-2 hover:text-white hover:bg-black' : 'border border-white py-1 rounded-full px-2 hover:text-black hover:bg-white'}`}>Motion</button>
+              </div>
+            </div>
+          </div>
+         ))}
+        </div> 
+
+        <div className="mt-11 lg:mt-16 flex justify-center">
+          <button className={`flex flex-row w-full lg:w-[70%] text-xl justify-center items-center gap-x-3 ${theme === 'light' ?  "border py-2.5 px-6 rounded-full border-black font-bold hover:bg-black hover:text-white" : "border py-2.5 px-6 rounded-full border-white font-bold hover:bg-white hover:text-black"}`}>
+            All case Studies <span className="transition delay-75 duration-100 hover:rotate-180">
+              <IoMdArrowForward size={24}/>
+            </span>
+          </button>
+        </div>
+      </div>
+
+
+      {/* journals  */} 
+      <div className="mt-11 lg:mt-20">
+      <h1 className="inline-flex items-center gap-x-3 mb-6">
+          <MdOutlineSubdirectoryArrowRight size={25}/>
+          <span className="text-xl">JOURNAL</span>
+        </h1>
+      </div> 
+        
+      <div>
+
+      </div> 
+      
     </div>
   )
 }
