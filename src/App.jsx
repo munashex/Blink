@@ -6,6 +6,8 @@ import { useContext } from "react"
 import About from "./pages/About"
 import Work from './pages/Work'
 import Journal from "./pages/Journal"
+import SingleJournal from "./pages/SingleJournal"
+
 const App = () => { 
   const {theme} = useContext(ThemeContext) 
 
@@ -19,6 +21,7 @@ const App = () => {
           <Route path="/about" element={<About/>}/>
           <Route path="/work" element={<Work/>}/>
           <Route path="/journal" element={<Journal/>}/>
+          <Route path="/journal/:id" element={<SingleJournal/>}/>
         </Routes>
         </div>
       </Router>

@@ -128,13 +128,13 @@ function Home() {
         
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-5 gap-y-8">
         {journals.slice(0, 3).map((journal) => (
-          <div key={journal.id} className="space-y-2"> 
+          <Link to={`/journal/${journal.id}`} key={journal.id} className="space-y-2"> 
           <img src={journal.image} className="rounded-xl h-80 w-full object-cover"/> 
           <div className="space-y-1.5"> 
             <h1 className="text-sm">{journal.date}</h1>
             <h1 className="text-lg md:text-xl font-bold">{journal.description}</h1>
           </div>
-          </div>
+          </Link>
         ))}
       </div> 
 
