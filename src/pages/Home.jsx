@@ -28,7 +28,7 @@ function Home() {
   }
 
   return (
-    <div className='mt-11'>
+    <div className='mt-11 lg:my-20'>
       {/* what i do  */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-2">  
         <h1 className="text-4xl font-bold lg:text-7xl">Carl Sagan. Visual designer</h1> 
@@ -127,7 +127,7 @@ function Home() {
       </div> 
         
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-5 gap-y-8">
-        {journals.map((journal) => (
+        {journals.slice(0, 3).map((journal) => (
           <div key={journal.id} className="space-y-2"> 
           <img src={journal.image} className="rounded-xl h-80 w-full object-cover"/> 
           <div className="space-y-1.5"> 
