@@ -7,6 +7,7 @@ import About from "./pages/About"
 import Work from './pages/Work'
 import Journal from "./pages/Journal"
 import SingleJournal from "./pages/SingleJournal"
+import Footer from "./components/Footer"
 
 const App = () => { 
   const {theme} = useContext(ThemeContext) 
@@ -15,7 +16,7 @@ const App = () => {
         <div className={theme === 'dark' ? 'bg-[#171616]  min-h-screen text-white' : 'text-black'}>
         <Router>
         <Navbar/>
-        <div className="px-4 md:px-10 lg:px-24 ">
+        <div className="px-4 md:px-10 lg:px-24">
         <Routes>
           <Route path="/" element={<Home/>}/> 
           <Route path="/about" element={<About/>}/>
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/journal/:id" element={<SingleJournal/>}/>
         </Routes>
         </div>
+        <Footer/>
       </Router>
         </div>
   )
