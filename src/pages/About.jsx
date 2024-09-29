@@ -9,7 +9,7 @@ function About() {
 
     const {theme} = useContext(ThemeContext)
   return (
-    <div className="mt-11 lg:mt-20">
+    <div className="mt-11 lg:mt-20 animate-fade-down">
       
       {/* about me info */}
      <div className="space-y-6">

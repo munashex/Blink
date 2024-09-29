@@ -28,7 +28,7 @@ function Home() {
   }
 
   return (
-    <div className='mt-11 lg:my-20'>
+    <div className='mt-11 lg:my-20 animate-fade-down'>
       {/* what i do  */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-2">  
         <h1 className="text-4xl font-bold lg:text-7xl">Carl Sagan. Visual designer</h1> 

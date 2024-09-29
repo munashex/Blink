@@ -8,7 +8,7 @@ function SingleJournal() {
   const navigate = useNavigate()
 
   return (
-    <div className="mt-11 lg:mt-20"> 
+    <div className="mt-11 lg:mt-20 animate-fade-down"> 
      
      {/* go back to journal page */} 
      <button onClick={() => navigate('/journal')} className="inline-flex items-center text-lg font-bold gap-2"> 

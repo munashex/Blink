@@ -7,7 +7,7 @@ const Work = () => {
   const { theme } = useContext(ThemeContext)
 
     return (
-        <div className="mt-11 lg:mt-20">
+        <div className="mt-11 lg:mt-20 animate-fade-down">
 
          <div className="flex flex-col gap-y-4 lg:flex-row justify-between">
            <h1 className="font-bold text-3xl lg:text-6xl lg:w-1/2">Case Studies</h1> 

@@ -7,7 +7,9 @@ import About from "./pages/About"
 import Work from './pages/Work'
 import Journal from "./pages/Journal"
 import SingleJournal from "./pages/SingleJournal"
-import Footer from "./components/Footer"
+import Footer from "./components/Footer" 
+import Contact from './pages/Contact' 
+import NotFound from "./pages/Notfound"
 
 const App = () => { 
   const {theme} = useContext(ThemeContext) 
@@ -23,6 +25,8 @@ const App = () => {
           <Route path="/work" element={<Work/>}/>
           <Route path="/journal" element={<Journal/>}/>
           <Route path="/journal/:id" element={<SingleJournal/>}/>
+          <Route path="contact" element={<Contact/>}/>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
         </div>
         <Footer/>
