@@ -13,6 +13,7 @@ import { FaPlus, FaMinus} from "react-icons/fa6";
 import { works } from "../data/works"
 import { IoMdArrowForward } from "react-icons/io";
 import { journals } from "../data/journal"
+import {Link} from 'react-router-dom'
 
 function Home() {
   const { theme } = useContext(ThemeContext)
@@ -92,7 +93,7 @@ function Home() {
         </h1>
 
         <div className="mt-7 grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-7">
-         {works.map((work) => (
+         {works.slice(0, 6).map((work) => (
           <div key={work.name} className={theme === 'dark' ? 'p-3 bg-[#202021] rounded-xl lg:p-5' : 'p-3 lg:p-5 bg-gray-100 rounded-xl'}> 
             <img src={work.image} alt={work.name} className="scale-100 lg:hover:scale-125 transition delay-150 duration-300 ease-in-out"/> 
             <div className="space-y-2.5"> 
@@ -108,11 +109,11 @@ function Home() {
         </div> 
 
         <div className="mt-11 lg:mt-16 flex justify-center">
-          <button className={`flex flex-row w-full lg:w-[70%] text-xl justify-center items-center gap-x-3 ${theme === 'light' ?  "border py-2.5 px-6 rounded-full border-black font-bold hover:bg-black hover:text-white" : "border py-2.5 px-6 rounded-full border-white font-bold hover:bg-white hover:text-black"}`}>
+          <Link to="work" className={`flex flex-row w-full lg:w-[70%] text-xl justify-center items-center gap-x-3 ${theme === 'light' ?  "border py-2.5 px-6 rounded-full border-black font-bold hover:bg-black hover:text-white" : "border py-2.5 px-6 rounded-full border-white font-bold hover:bg-white hover:text-black"}`}>
             All case Studies <span className="transition delay-75 duration-100 hover:rotate-180">
               <IoMdArrowForward size={24}/>
             </span>
-          </button>
+          </Link>
         </div>
       </div>
 

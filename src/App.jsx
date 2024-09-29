@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import { ThemeContext} from "./theme/theme"
 import { useContext } from "react"
 import About from "./pages/About"
+import Work from './pages/Work'
 
 const App = () => { 
   const {theme} = useContext(ThemeContext) 
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home/>}/> 
           <Route path="/about" element={<About/>}/>
+          <Route path="/work" element={<Work/>}/>
         </Routes>
         </div>
       </Router>

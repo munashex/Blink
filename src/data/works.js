@@ -4,6 +4,8 @@ import work3 from '../images/work3.avif'
 import work4 from '../images/work4.avif'
 import work5 from '../images/work5.avif'
 import work6 from '../images/work6.avif' 
+import work7 from '../images/work7.avif'
+import work8 from '../images/work8.avif'
 
 
 export const works = [
@@ -31,5 +33,13 @@ export const works = [
     name: "Trinity", 
     image: work6
     },
+    {
+    name: "Flint icons",
+    image: work7
+    }, 
+    {
+    name: "Nayzak Design", 
+    image: work8
+    }
 
  ]
