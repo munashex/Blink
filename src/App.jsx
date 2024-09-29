@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Navbar from "./components/Navbar" 
 import { ThemeContext} from "./theme/theme"
 import { useContext } from "react"
+import About from "./pages/About"
 
 const App = () => { 
   const {theme} = useContext(ThemeContext) 
@@ -13,7 +14,8 @@ const App = () => {
         <Navbar/>
         <div className="px-4 md:px-10 lg:px-24 ">
         <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<Home/>}/> 
+          <Route path="/about" element={<About/>}/>
         </Routes>
         </div>
       </Router>

@@ -7,7 +7,7 @@ const Navlinks = ({closeNav}) => {
     const {theme} = useContext(ThemeContext)
 
     const links = [ 
-        {id: "01", name: "Home", url: 'home'}, {id: "02", name: "About", url: 'about'},  
+        {id: "01", name: "Home", url: ''}, {id: "02", name: "About", url: 'about'},  
         {id: "03", name: "Work", url: 'work'}, {id: "04", name: "Journal", url: "journal"}, 
         {id: "05", name: "Contact", url: "contact"}]
 
